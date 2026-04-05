@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://player"]
+
+[ext_resource type="Script" uid="uid://bksbva5s1icvt" path="res://scripts/player.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cbxm7roa8q3ng" path="res://assets/New Piskel.png" id="2_g2els"]
+
+[sub_resource type="CircleShape2D" id="1"]
+radius = 16.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1207697465]
+script = ExtResource("1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1587418403]
+shape = SubResource("1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1722974775]
+position = Vector2(-2.0000024, 8)
+scale = Vector2(1.875, 1.6564416)
+texture = ExtResource("2_g2els")

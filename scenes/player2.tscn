@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://clk4gjrdjaoyi"]
+
+[sub_resource type="GDScript" id="GDScript_nj5qq"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Player2" type="Node2D" unique_id=1292604815]
+script = SubResource("GDScript_nj5qq")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1571184228]
+position = Vector2(940, 783)
+polygon = PackedVector2Array(-12, -15, -12, 17, 20, 17, 20, -15, 12, -23, 4, -15, -4, -23)
