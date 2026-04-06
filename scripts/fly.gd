@@ -69,6 +69,14 @@ func _process_frozen(delta: float) -> void:
 		# Break free — resume buzzing
 		state = State.BUZZING
 		_pick_new_direction()
+		return
+
+	# Check if any cat is close enough to eat the fly
+	for cat in get_tree().get_nodes_in_group("cats"):
+		var dist: float = global_position.distance_to(cat.global_position)
+		if dist < 60.0:
+			die()
+			return
 
 func _pick_new_direction() -> void:
 	var angle = randf() * TAU
@@ -91,12 +99,7 @@ func _on_body_entered(body: Node) -> void:
 		die()
 
 func die() -> void:
-	var level = get_parent()
-	if level.has_method("fly_died"):
-		queue_free()
-		level.fly_died()
-	else:
-		queue_free()
+	queue_free()
 
 func _draw() -> void:
 	var body_color := Color(0.15, 0.1, 0.1)
