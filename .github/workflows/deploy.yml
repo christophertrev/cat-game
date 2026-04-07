@@ -24,8 +24,9 @@ jobs:
       - name: Setup export templates
         run: |
           mkdir -vp $HOME/.local/share/godot/export_templates/
-          mv /root/.local/share/godot/export_templates/4.4.1.stable \
-             $HOME/.local/share/godot/export_templates/4.4.1.stable
+          TEMPLATES=$(find /root /usr/local -type d -name "*.stable" 2>/dev/null | head -1)
+          if [ -z "$TEMPLATES" ]; then echo "ERROR: export templates not found"; exit 1; fi
+          cp -r "$TEMPLATES" $HOME/.local/share/godot/export_templates/
 
       - name: Export for Web
         run: |
