@@ -55,12 +55,12 @@ jobs:
           BUTLER_VERSION=$(curl -s "https://api.github.com/repos/itchio/butler/releases/latest" | grep '"tag_name"' | sed 's/.*"tag_name": "\(.*\)".*/\1/')
           curl -L -o butler.zip "https://github.com/itchio/butler/releases/download/${BUTLER_VERSION}/butler-linux-amd64.zip"
           unzip butler.zip
-          chmod +x butler
-          ./butler -V
+          chmod +x linux-amd64/butler
+          linux-amd64/butler -V
 
       - name: Deploy to itch.io
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
         run: |
-          ./butler push build/web/ ${{ env.ITCH_USER }}/${{ env.ITCH_GAME }}:html5 \
+          linux-amd64/butler push build/web/ ${{ env.ITCH_USER }}/${{ env.ITCH_GAME }}:html5 \
             --userversion ${{ github.ref_name }}
