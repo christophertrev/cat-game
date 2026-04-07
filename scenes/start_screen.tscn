@@ -2,13 +2,15 @@
 
 [ext_resource type="Script" path="res://scripts/start_screen.gd" id="1"]
 
-[node name="StartScreen" type="CanvasLayer"]
+[node name="StartScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource("1")
 
 [node name="Background" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color(0, 0, 0, 0.85)
+color = Color(0.05, 0.05, 0.1, 1)
 
 [node name="VBox" type="VBoxContainer" parent="."]
 anchor_left = 0.5
@@ -44,9 +46,9 @@ theme_override_font_sizes/font_size = 20
 layout_mode = 2
 custom_minimum_size = Vector2(0, 8)
 
-[node name="StartButton" type="Button" parent="VBox"]
+[node name="PlayButton" type="Button" parent="VBox"]
 layout_mode = 2
 text = "Play!"
 theme_override_font_sizes/font_size = 28
 
-[connection signal="pressed" from="VBox/StartButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBox/PlayButton" to="." method="_on_play_pressed"]

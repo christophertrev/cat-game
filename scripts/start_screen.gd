@@ -1,10 +1,4 @@
-extends CanvasLayer
+extends Control
 
-signal start_pressed
-
-func _ready() -> void:
-	show()
-
-func _on_start_pressed() -> void:
-	start_pressed.emit()
-	hide()
+func _on_play_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/char_select.tscn")
