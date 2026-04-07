@@ -6,7 +6,7 @@ on:
       - 'v*'
 
 env:
-  ITCH_USER: "toph_zuko"
+  ITCH_USER: "toph-zuko"
   ITCH_GAME: "toph-zuko"
 
 jobs:
