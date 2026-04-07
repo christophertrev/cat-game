@@ -7,7 +7,7 @@ on:
 
 # TODO: set these two values before first deploy
 env:
-  ITCH_USER: "your-itch-username"
+  ITCH_USER: "toph_zuko"
   ITCH_GAME: "cat-game"
 
 jobs:
@@ -15,7 +15,7 @@ jobs:
     name: Export and Deploy
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:4.4.1  # TODO: update to match your Godot version
+      image: barichello/godot-ci:4.6.2
 
     steps:
       - name: Checkout
