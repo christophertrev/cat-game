@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bksbva5s1icvt" path="res://scripts/player.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://cbxm7roa8q3ng" path="res://assets/New Piskel.png" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://bc42ibd2d0by4" path="res://assets/zuko-animation.png" id="3_qhqgy"]
+[ext_resource type="Texture2D" path="res://assets/Toph-animation.png" id="4_toph"]
 
 [sub_resource type="CircleShape2D" id="1"]
 radius = 28.0
@@ -106,8 +107,108 @@ animations = [{
 "speed": 11.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_toph_00"]
+atlas = ExtResource("4_toph")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toph_01"]
+atlas = ExtResource("4_toph")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toph_02"]
+atlas = ExtResource("4_toph")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toph_03"]
+atlas = ExtResource("4_toph")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toph_04"]
+atlas = ExtResource("4_toph")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toph_05"]
+atlas = ExtResource("4_toph")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toph_06"]
+atlas = ExtResource("4_toph")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toph_07"]
+atlas = ExtResource("4_toph")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toph_08"]
+atlas = ExtResource("4_toph")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toph_09"]
+atlas = ExtResource("4_toph")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toph_10"]
+atlas = ExtResource("4_toph")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toph_11"]
+atlas = ExtResource("4_toph")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toph_12"]
+atlas = ExtResource("4_toph")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_toph"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toph_00")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toph_01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toph_02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toph_03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toph_04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toph_05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toph_06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toph_07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toph_08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toph_09")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toph_10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toph_11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toph_12")
+}],
+"loop": true,
+"name": &"default",
+"speed": 11.0
+}]
+
 [node name="Player" type="CharacterBody2D" unique_id=1207697465]
 script = ExtResource("1")
+toph_frames = SubResource("SpriteFrames_toph")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1587418403]
 shape = SubResource("1")
