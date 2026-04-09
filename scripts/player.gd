@@ -28,10 +28,10 @@ var pounce_direction: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	add_to_group("cats")
-	anim.play("default")
 	is_toph = GameState.character == "toph"
 	if is_toph and toph_frames:
 		anim.sprite_frames = toph_frames
+	anim.play("default")
 
 func _physics_process(delta: float) -> void:
 	if is_toph:
